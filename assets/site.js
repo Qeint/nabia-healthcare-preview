@@ -33,6 +33,11 @@
       const requestedHero = new URLSearchParams(window.location.search).get("hero");
       const clinicianHero = requestedHero === "clinician";
       if (clinicianHero) document.body.classList.add("hero-variant-clinician");
+      document.querySelectorAll("[data-hero-choice]").forEach(function (choice) {
+        const selected = choice.dataset.heroChoice === (clinicianHero ? "clinician" : "lake");
+        if (selected) choice.setAttribute("aria-current", "true");
+        else choice.removeAttribute("aria-current");
+      });
 
       const heroVideo = document.querySelector("[data-hero-video]");
       const heroVideoToggle = document.querySelector("[data-hero-video-toggle]");
