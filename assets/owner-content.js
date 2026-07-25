@@ -1,41 +1,41 @@
 window.NABIA_OWNER_CONTENT = {
   "previewMode": false,
-  "updated": "2026-07-19",
+  "updated": "2026-07-25",
   "fields": {
     "publicPhone": {
       "category": "Contact",
       "label": "Public phone",
       "fallback": "202-810-4598",
-      "value": "",
-      "verified": false
+      "value": "202-810-4598",
+      "verified": true
     },
     "publicEmail": {
       "category": "Contact",
       "label": "Public email",
       "fallback": "info@nabiahealthcare.com",
-      "value": "",
-      "verified": false
+      "value": "info@nabiahealthcare.com",
+      "verified": true
     },
     "legalBusinessName": {
       "category": "Business identity",
       "label": "Legal business name",
       "fallback": "Nabia Healthcare",
-      "value": "",
-      "verified": false
+      "value": "Nabia Healthcare LLC",
+      "verified": true
     },
     "officeHours": {
       "category": "Contact",
       "label": "Office and phone hours",
-      "fallback": "Call to confirm current phone and appointment hours.",
-      "value": "",
-      "verified": false
+      "fallback": "By appointment only.",
+      "value": "By appointment only",
+      "verified": true
     },
     "idealPatient": {
       "category": "Business strategy",
       "label": "Ideal patient",
       "fallback": "The practice owner is defining the clearest patient profile for public guidance.",
-      "value": "",
-      "verified": false
+      "value": "Adults and older adults.",
+      "verified": true
     },
     "primaryBuyer": {
       "category": "Business strategy",
@@ -53,10 +53,10 @@ window.NABIA_OWNER_CONTENT = {
     },
     "primaryService": {
       "category": "Care model",
-      "label": "Lead service",
-      "fallback": "The practice is confirming which service should lead the public website.",
-      "value": "",
-      "verified": false
+      "label": "Equal service settings",
+      "fallback": "The practice offers primary care in the setting confirmed for the person and visit.",
+      "value": "Office primary care, home and facility-based primary care, and telemedicine should receive equal prominence.",
+      "verified": true
     },
     "careModel": {
       "category": "Care model",
@@ -76,8 +76,8 @@ window.NABIA_OWNER_CONTENT = {
       "category": "Access",
       "label": "Response time",
       "fallback": "The practice will confirm when you should expect a response.",
-      "value": "",
-      "verified": false
+      "value": "Within 48 hours",
+      "verified": true
     },
     "firstAppointment": {
       "category": "Access",
@@ -90,8 +90,8 @@ window.NABIA_OWNER_CONTENT = {
       "category": "Location",
       "label": "Service area",
       "fallback": "Share the patient’s general location by phone so the practice can confirm service availability.",
-      "value": "",
-      "verified": false
+      "value": "Office and mobile service: Prince George’s, Montgomery and Charles counties in Maryland, plus Washington, DC. Telemedicine: Maryland and Washington, DC.",
+      "verified": true
     },
     "locations": {
       "category": "Location",
@@ -272,15 +272,15 @@ window.NABIA_OWNER_CONTENT = {
       "category": "Launch materials",
       "label": "Brand tagline",
       "fallback": "Compassionate Care Beyond Medicine",
-      "value": "",
-      "verified": false
+      "value": "Compassionate Care Beyond Medicine",
+      "verified": true
     },
     "careerHiringStatus": {
       "category": "Careers",
       "label": "Hiring status",
       "fallback": "Career opportunities and application instructions are being prepared.",
-      "value": "",
-      "verified": false
+      "value": "Nabia is collecting general expressions of interest and is not advertising a specific open position.",
+      "verified": true
     },
     "careerRoles": {
       "category": "Careers",

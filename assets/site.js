@@ -30,20 +30,24 @@
       });
     }
 
-    const heroVideo = document.querySelector("[data-hero-video]");
-    const heroVideoToggle = document.querySelector("[data-hero-video-toggle]");
-    if (heroVideo && heroVideoToggle) {
-      heroVideo.controls = false;
-      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const requestedHero = new URLSearchParams(window.location.search).get("hero");
+      const clinicianHero = requestedHero === "clinician";
+      if (clinicianHero) document.body.classList.add("hero-variant-clinician");
+
+      const heroVideo = document.querySelector("[data-hero-video]");
+      const heroVideoToggle = document.querySelector("[data-hero-video-toggle]");
+      if (heroVideo && heroVideoToggle) {
+        heroVideo.controls = false;
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const syncVideoControl = function () {
         heroVideoToggle.textContent = heroVideo.paused ? "Play motion" : "Pause motion";
         heroVideoToggle.setAttribute("aria-label", heroVideo.paused ? "Play lake motion" : "Pause lake motion");
       };
-      const applyMotionPreference = function () {
-        if (reducedMotion.matches) {
-          heroVideo.pause();
-          heroVideoToggle.hidden = true;
-        } else {
+        const applyMotionPreference = function () {
+          if (clinicianHero || reducedMotion.matches) {
+            heroVideo.pause();
+            heroVideoToggle.hidden = true;
+          } else {
           heroVideoToggle.hidden = false;
           heroVideo.play().catch(syncVideoControl);
         }
@@ -56,9 +60,9 @@
         if (heroVideo.paused) heroVideo.play().catch(syncVideoControl);
         else heroVideo.pause();
       });
-      reducedMotion.addEventListener("change", applyMotionPreference);
-      applyMotionPreference();
-    }
+        reducedMotion.addEventListener("change", applyMotionPreference);
+        applyMotionPreference();
+      }
 
     document.querySelectorAll("[data-year]").forEach(function (node) {
     node.textContent = new Date().getFullYear();
@@ -143,7 +147,7 @@
     const previewBar = document.createElement("aside");
     previewBar.className = "owner-preview-bar";
     previewBar.setAttribute("aria-label", "Website preview status");
-    previewBar.innerHTML = "<strong>Working preview</strong><span>Amber details are ready for owner confirmation—not public claims.</span>" +
+      previewBar.innerHTML = "<strong>Working preview</strong><span>Owner-verified facts are mixed with amber operational questions. Production publication is still gated.</span>" +
       '<a href="owner-preview.html">Review owner fields</a>';
     const header = document.querySelector(".site-header");
     if (header) header.before(previewBar);
